@@ -13,9 +13,12 @@ void gensub(int i,int n,vector<int>curr,vector<vector<int>>&res,vector<int>&nums
         res.emplace_back(curr);
         return;
     }
-    gensub(i+1,n,curr,res,nums);
-    curr.emplace_back(nums[i]);
-    gensub(i+1,n,curr,res,nums);
+    for(int j=i+1;j<n;j++)
+    {
+        gensub(j+1,n,curr,res,nums);
+        curr.emplace_back(nums[]);
+        gensub(j+1,n,curr,res,nums);
+    }
 }
 vector<vector<int>> subsets(vector<int>& nums) 
 {
